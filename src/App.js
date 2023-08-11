@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Page from "./components/Page";
+import Page from "./Page";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { editTask, createTask, deleteTask } from "./actions";
 

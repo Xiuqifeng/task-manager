@@ -1,11 +1,15 @@
 import React from "react";
 import Task from "./Task";
-import "./List.scss";
 
 function List (props) {
+
+    const backgroundColor = {
+        backgroundColor: "PapayaWhip",
+    };
+
     return (
         <div>
-            <div className="card-header text-center font-weight-bold card-title">
+            <div className="card-header text-center font-weight-bold" style={backgroundColor}>
                 {props.status}
             </div>
             {props.tasks.map(task => (

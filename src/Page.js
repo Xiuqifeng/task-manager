@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import List from "./List";
-import "./Page.scss";
+
 
 const TaskStatuses = ["To do", "Work in Progress", "Completed"]
 
@@ -36,6 +36,14 @@ function Page (props) {
         resetForm();
     }
 
+    const backgroundColor1 = {
+        backgroundColor: "BurlyWood",
+    };
+
+    const backgroundColor2 = {
+        backgroundColor: "PapayaWhip",
+    };
+
     const renderTaskLists = () => {
         const {tasks} = props;
 
@@ -53,21 +61,21 @@ function Page (props) {
     return (
         <div className="container my-5">
             <div className="py-3">
-                <div className="page-title d-flex justify-content-center py-3">
+                <div className="d-flex justify-content-center py-3" style={backgroundColor2}>
                     <div>
                         <h1 className="display-5 font-weight-bold">TASK MANAGER</h1>
                     </div>
                     <div>
-                        <button className="add-task btn m-3" onClick={formToggler}>+</button>
+                        <button className="btn m-3" style={backgroundColor1} onClick={formToggler}>+</button>
                     </div>
                 </div>
                 {cardForm && (
                 <form onSubmit={onCreateTask}>
                     <div className="form-group">
-                        <input type="text" className="form-control mt-5 task-name" placeholder="Enter Task" onChange={onChangeTitle} />
+                        <input type="text" className="form-control mt-5" style={backgroundColor2} placeholder="Enter Task" onChange={onChangeTitle} />
                     </div>
                     <div className="form-group">
-                        <textarea type="text" className="form-control mt-3 task-desc" placeholder="Task Description" onChange={onChangeDescription} />
+                        <textarea type="text" className="form-control mt-3" style={backgroundColor2} placeholder="Task Description" onChange={onChangeDescription} />
                     </div>
                     <button type="submit" className="btn btn-primary">Add</button>
                 </form>
